@@ -18,4 +18,5 @@ defmodule Lasagna do
 
 
   # Please define the 'alarm/0' function
+  def alarm, do: IO.puts "Ding!"
 end
