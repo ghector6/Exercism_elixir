@@ -10,6 +10,7 @@ defmodule Rules do
   end
 
   def lose?(power_pellet_active, touching_ghost) do
+    touching_ghost and not power_pellet_active
     # Please implement the lose?/2 function
   end
 
