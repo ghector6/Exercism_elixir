@@ -11,6 +11,7 @@ defmodule FreelancerRates do
 
   def monthly_rate(hourly_rate, discount) do
     # Please implement the monthly_rate/2 function
+      ceil(apply_discount(daily_rate(hourly_rate * 22), discount))
   end
 
   def days_in_budget(budget, hourly_rate, discount) do
