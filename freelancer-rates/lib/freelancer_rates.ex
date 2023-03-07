@@ -5,6 +5,7 @@ defmodule FreelancerRates do
   end
 
   def apply_discount(before_discount, discount) do
+    before_discount - (before_discount * discount / 100)
     # Please implement the apply_discount/2 function
   end
 
