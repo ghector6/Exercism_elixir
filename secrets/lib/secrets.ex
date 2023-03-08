@@ -1,5 +1,7 @@
 defmodule Secrets do
   def secret_add(secret) do
+
+    fn arg -> secret + arg end
     # Please implement the secret_add/1 function
   end
 
