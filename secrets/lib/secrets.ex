@@ -6,6 +6,7 @@ defmodule Secrets do
   end
 
   def secret_subtract(secret) do
+    fn arg -> arg -  secret end
     # Please implement the secret_subtract/1 function
   end
 
