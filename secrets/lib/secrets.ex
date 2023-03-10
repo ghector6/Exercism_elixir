@@ -11,6 +11,7 @@ defmodule Secrets do
   end
 
   def secret_multiply(secret) do
+    fn arg -> arg * secret end
     # Please implement the secret_multiply/1 function
   end
 
