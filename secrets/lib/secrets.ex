@@ -17,10 +17,11 @@ defmodule Secrets do
 
   def secret_divide(secret) do
     fn arg -> Integer.floor_div(arg, secret) end
-    # Please implement the secret_divide/1 function
   end
 
   def secret_and(secret) do
+    fn arg -> Bitwise.band(arg,secret) end
+
     # Please implement the secret_and/1 function
   end
 
