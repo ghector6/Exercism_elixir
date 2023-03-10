@@ -16,6 +16,7 @@ defmodule Secrets do
   end
 
   def secret_divide(secret) do
+    fn arg -> Integer.floor_div(arg, secret) end
     # Please implement the secret_divide/1 function
   end
 
