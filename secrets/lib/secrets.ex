@@ -26,6 +26,7 @@ defmodule Secrets do
   end
 
   def secret_xor(secret) do
+    fn arg -> Bitwise.bxor(arg, secret) end
     # Please implement the secret_xor/1 function
   end
 
