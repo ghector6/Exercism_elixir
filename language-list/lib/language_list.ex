@@ -19,9 +19,13 @@ defmodule LanguageList do
     # Please implement the first/1 function
   end
 
+  def count([]), do: 0
   def count(list) do
+    [head | tail] = list; 1 + count(tail)
     # Please implement the count/1 function
   end
+  
+  
 
   def functional_list?(list) do
     # Please implement the functional_list?/1 function
