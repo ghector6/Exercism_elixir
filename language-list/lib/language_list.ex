@@ -10,6 +10,7 @@ defmodule LanguageList do
   end
 
   def remove(list) do
+    List.delete_at(list, 0)
     # Please implement the remove/1 function
   end
 
