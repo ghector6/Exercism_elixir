@@ -9,7 +9,7 @@ defmodule LanguageList do
   end
 
   def remove(list) do
-    [head | tail] = list; tail    
+    [_head | tail] = list; tail    
   end
 
   def first(list) do
@@ -21,7 +21,7 @@ defmodule LanguageList do
   end
 
   def functional_list?(list) do
-    Enum.member?(list, "Elixir")
+    "Elixir" in list
   end
 
 end
