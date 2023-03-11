@@ -19,9 +19,8 @@ defmodule LanguageList do
     # Please implement the first/1 function
   end
 
-  def count([]), do: 0
   def count(list) do
-    [head | tail] = list; 1 + count(tail)
+    Kernel.length(list)
     # Please implement the count/1 function
   end
   
