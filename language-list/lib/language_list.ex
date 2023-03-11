@@ -15,6 +15,7 @@ defmodule LanguageList do
   end
 
   def first(list) do
+    List.first(list)
     # Please implement the first/1 function
   end
 
