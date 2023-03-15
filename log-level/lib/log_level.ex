@@ -9,7 +9,6 @@ defmodule LogLevel do
       level == 5  and not legacy? -> :fatal
       true -> :unknown
     end
-    # Please implement the to_label/2 function
   end
 
   def alert_recipient(level, legacy?) do
@@ -20,6 +19,5 @@ defmodule LogLevel do
       label == :unknown and not legacy? -> :dev2
       true -> false
     end
-    # Please implement the alert_recipient/2 function
   end
 end
