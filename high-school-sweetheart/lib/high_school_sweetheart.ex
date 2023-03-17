@@ -14,6 +14,9 @@ defmodule HighSchoolSweetheart do
   end
 
   def initials(full_name) do
+    full_name
+    |> String.split() 
+    |> Kernel.<>(initial(List.first()), " #{initial(List.last())}")
     # Please implement the initials/1 function
   end
 
