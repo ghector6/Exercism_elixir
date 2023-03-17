@@ -14,27 +14,28 @@ defmodule HighSchoolSweetheart do
   end
 
   def initials(full_name) do
-    full_name
-    |> String.split() 
-    |> Kernel.<>(initial(List.first()), " #{initial(List.last())}")
+    [a,b] = String.split(full_name) 
+    Kernel.<>(initial(a), " #{initial(b)}")  
     # Please implement the initials/1 function
   end
 
   def pair(full_name1, full_name2) do
-    #      ******       ******
-    #    **      **   **      **
-    #  **         ** **         **
-    # **            *            **
-    # **                         **
-    # **     X. X.  +  X. X.     **
-    #  **                       **
-    #    **                   **
-    #      **               **
-    #        **           **
-    #          **       **
-    #            **   **
-    #              ***
-    #               *
+     """
+         ******       ******
+       **      **   **      **
+     **         ** **         **
+    **            *            **
+    **                         **
+    **     #{initials(full_name1)}  +  #{initials(full_name2)}     **
+     **                       **
+       **                   **
+         **               **
+           **           **
+             **       **
+               **   **
+                 ***
+                  *
+    """      
 
     # Please implement the pair/2 function
   end
