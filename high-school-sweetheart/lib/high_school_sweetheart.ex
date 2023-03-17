@@ -7,6 +7,9 @@ defmodule HighSchoolSweetheart do
   end
 
   def initial(name) do
+    first_letter(name)
+    |> String.upcase()
+    |> Kernel.<>(".")
     # Please implement the initial/1 function
   end
 
