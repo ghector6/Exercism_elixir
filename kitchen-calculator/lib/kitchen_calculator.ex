@@ -2,7 +2,6 @@ defmodule KitchenCalculator do
   def get_volume(volume_pair) do
     {_, measure} = volume_pair
     measure
-    # Please implement the get_volume/1 function
   end
 
   def to_milliliter({:milliliter, measure}), do: {:milliliter, measure}
@@ -33,6 +32,7 @@ defmodule KitchenCalculator do
   end
 
   def convert(volume_pair, unit) do
-    # Please implement the convert/2 function
+    conversion = to_milliliter(volume_pair)
+    from_milliliter(conversion, unit)
   end
 end
