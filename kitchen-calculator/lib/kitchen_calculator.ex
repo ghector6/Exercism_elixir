@@ -5,9 +5,12 @@ defmodule KitchenCalculator do
     # Please implement the get_volume/1 function
   end
 
-  def to_milliliter(volume_pair) do
-    # Please implement the to_milliliter/1 functions
-  end
+  def to_milliliter({:milliliter, measure}), do: {:milliliter, measure}
+  def to_milliliter({:cup, measure}), do: {:milliliter, measure * 240}
+  def to_milliliter({:fluid_ounce, measure}), do: {:milliliter, measure * 30}
+  def to_milliliter({:teaspoon, measure}), do: {:milliliter, measure * 5}
+  def to_milliliter({:tablespoon, measure}), do: {:milliliter, measure * 15}
+
 
   def from_milliliter(volume_pair, unit) do
     # Please implement the from_milliliter/2 functions
