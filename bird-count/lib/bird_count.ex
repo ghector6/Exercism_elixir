@@ -9,9 +9,8 @@ defmodule BirdCount do
   def has_day_without_birds?([0 | _tail]), do: true
   def has_day_without_birds?([_head| tail]), do: has_day_without_birds?(tail)
 
-  def total(list) do
-    # Please implement the total/1 function
-  end
+  def total([]), do: 0
+  def total([head| tail]), do: head + total(tail)
 
   def busy_days(list) do
     # Please implement the busy_days/1 function
