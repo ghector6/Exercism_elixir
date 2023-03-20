@@ -14,7 +14,6 @@ defmodule BirdCount do
 
   def busy_days([]) do
     0
-    # Please implement the busy_days/1 function
   end
   def busy_days([head | tail]) when head >=5  do
     1 + busy_days(tail)
