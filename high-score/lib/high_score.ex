@@ -16,6 +16,7 @@ defmodule HighScore do
   end
 
   def reset_score(scores, name) do
+    add_player(scores,name )
     # Please implement the reset_score/2 function
   end
 
