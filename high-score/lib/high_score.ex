@@ -1,10 +1,11 @@
 defmodule HighScore do
+  @initial_score 0
   def new() do
     %{}
     # Please implement the new/0 function
   end
 
-  def add_player(scores, name, score \\ 0) do
+  def add_player(scores, name, score \\ @initial_score) do
     Map.put(scores, name, score)
     # Please implement the add_player/3 function
   end
