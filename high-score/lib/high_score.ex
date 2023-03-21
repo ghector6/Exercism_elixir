@@ -1,5 +1,6 @@
 defmodule HighScore do
   def new() do
+    %{}
     # Please implement the new/0 function
   end
 
