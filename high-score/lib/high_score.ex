@@ -21,6 +21,7 @@ defmodule HighScore do
   end
 
   def update_score(scores, name, score) do
+    Map.update(scores, name, score, fn value -> value + score end )
     # Please implement the update_score/3 function
   end
 
