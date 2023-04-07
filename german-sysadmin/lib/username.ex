@@ -3,7 +3,7 @@ defmodule Username do
   def sanitize([], acc), do: Enum.reverse(acc)
   def sanitize([h | t] = username, acc) do
     case h do
-      h when h in ?a..?z -> sanitize(t,[h|acc])
+      h when h in ?a..?z or h == 95 -> sanitize(t,[h|acc])
       _ -> sanitize(t, acc)
     end
 
