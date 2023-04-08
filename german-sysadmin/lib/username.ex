@@ -3,24 +3,12 @@ defmodule Username do
   def sanitize([], acc), do: Enum.reverse(acc)
   def sanitize([h | t] = _username, acc) do
     case h do
-       228 -> sanitize(t, [?e, ?a| acc])
-       246 -> sanitize(t, [?e, ?o| acc])
-       252 -> sanitize(t, [?e, ?u| acc])
-       223 -> sanitize(t, [?s, ?s| acc])
-      h when h in ?a..?z or h == 95 -> sanitize(t,[h|acc])
+       ?ä -> sanitize(t, [?e, ?a| acc])
+       ?ö -> sanitize(t, [?e, ?o| acc])
+       ?ü -> sanitize(t, [?e, ?u| acc])
+       ?ß -> sanitize(t, [?s, ?s| acc])
+      h when h in ?a..?z or h == ?_ -> sanitize(t,[h|acc])
       _ -> sanitize(t, acc)
     end
-
-
-
-
-#    Enum.filter(username, fn x -> x >= 97 and x <= 122 end)
-
-    # ä becomes ae
-    # ö becomes oe
-    # ü becomes ue
-    # ß becomes ss
-
-    # Please implement the sanitize/1 function
   end
 end
