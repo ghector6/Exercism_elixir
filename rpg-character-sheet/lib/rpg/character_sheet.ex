@@ -5,11 +5,14 @@ defmodule RPG.CharacterSheet do
   end
 
   def ask_name() do
-    IO.gets("What is your character's name?\n")
+    response = IO.gets("What is your character's name?\n")
+    String.trim(response)
     # Please implement the ask_name/0 function
   end
 
   def ask_class() do
+    response = IO.gets("What is your character's class?\n")
+    String.trim(response)
     # Please implement the ask_class/0 function
   end
 
