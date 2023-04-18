@@ -24,6 +24,15 @@ defmodule RPG.CharacterSheet do
   end
 
   def run() do
+    welcome()
+    name = ask_name()
+    class = ask_class()
+    level= ask_level()
+    player = %{class: class, level: level, name: name}
+    IO.puts "Your character: #{inspect player}"
+    player
+
+
     # Please implement the run/0 function
   end
 end
