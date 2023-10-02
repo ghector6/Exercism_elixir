@@ -3,10 +3,11 @@ defmodule Pingpong do
   def mailbox() do
     receive do
       {:ping, pid} ->
-        IO.puts "Pong!!"
-        mailbox()
-      {:pong, pid} ->
         IO.puts "Ping!!"
+        send(pid, {:pong, pid})
+        mailbox()
+      {:pong, _pid} ->
+        IO.puts "Pong!!"
         mailbox()
     end
   end
