@@ -1,9 +1,13 @@
 defmodule TakeANumber do
   def start() do
-    pid = spawn(fn -> 0 end)
+    pid = spawn(fn -> loop(0) end)
+  end
+
+  def loop(state) do
     receive do
-      {:report_state, process} -> send(pid, 0)
+      {:report_state, sender} ->
+        send(sender, state)
     end
-        # Please implement the start/0 function
+
   end
 end
