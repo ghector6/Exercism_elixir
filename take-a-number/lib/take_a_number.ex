@@ -13,7 +13,9 @@ defmodule TakeANumber do
         send(sender_pid, state + 1)
         loop(state+1)
 
-      {:stop, message} -> nil
+      :stop -> nil
+
+      _ -> loop(state)
     end
 
   end
