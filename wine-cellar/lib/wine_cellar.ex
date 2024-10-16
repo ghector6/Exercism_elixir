@@ -1,5 +1,11 @@
 defmodule WineCellar do
   def explain_colors do
+    list = Keyword.new(
+
+      white: "Fermented without skin contact.",
+      red: "Fermented with skin contact using dark-colored grapes.",
+      rose: "Fermented with some skin contact, but not enough to qualify as a red wine."
+    )
 
     # Please implement the explain_colors/0 function
   end
