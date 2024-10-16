@@ -11,7 +11,9 @@ defmodule WineCellar do
   end
 
   def filter(cellar, color, opts \\ []) do
-    # Please implement the filter/3 function
+    wines =
+      Enum.filter(cellar, fn {c, _} -> c == color end)
+      |> Enum.map(fn {_, wine} -> wine end)
   end
 
   # The functions below do not need to be modified.
