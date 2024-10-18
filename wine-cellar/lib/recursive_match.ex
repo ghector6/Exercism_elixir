@@ -17,4 +17,15 @@ defmodule RecursiveMatch do
     IO.inspect(guitars)
   end
 
+  #Function Head
+  def filter_by_year(list, type)
+
+  #Base Case
+  def filter_by_year([], _year), do: []
+
+  #RecursiveCase
+  def filter_by_year({_, year, _}, year) do
+    IO.puts("Hello is matching")
+  end
+
 end
