@@ -14,7 +14,7 @@ defmodule RecursiveMatch do
   def filter(brand, opt \\ []) do
     guitars =
       Keyword.get_values(@kwlisti, brand)
-    IO.inspect(guitars)
+      |> filter_by_year(opt[:year])
   end
 
   #Function Head
@@ -24,8 +24,13 @@ defmodule RecursiveMatch do
   def filter_by_year([], _year), do: []
 
   #RecursiveCase
-  def filter_by_year({_, year, _}, year) do
-    IO.puts("Hello is matching")
+  def filter_by_year([{_, year, _} = line | tail], year) do
+    [line | filter_by_year(tail, year)]
+  end
+
+  #Recursive for no Match
+  def filter_by_year([{_, _, _} | tail], year) do
+    filter_by_year(tail,year)
   end
 
 end
