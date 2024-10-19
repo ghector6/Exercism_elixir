@@ -17,6 +17,7 @@ defmodule PaintByNumber do
   end
 
   def test_picture() do
+    <<0::2, 1::2, 2::2, 3::2 >>
     # Please implement the test_picture/0 function
   end
 
