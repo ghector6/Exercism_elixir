@@ -37,6 +37,8 @@ defmodule PaintByNumber do
     # Please implement the get_first_pixel/2 function
   end
 
+  def drop_first_pixel(<<>>, _color_count), do: empty_picture()
+
   def drop_first_pixel(picture, color_count) do
     # Please implement the drop_first_pixel/2 function
   end
