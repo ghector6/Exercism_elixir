@@ -49,7 +49,7 @@ new_value = <<0b011::3, value::bitstring, 0b000::3>>
 # => <<120, 8::size(4)>>
 ```
 
-### Concatenating
+### Concatenatinj
 
 We can concatenate bitstrings stored in variables using the special form. The `::bitstring` type must be used when concatenating two bitstrings of unknown sizes.
 
