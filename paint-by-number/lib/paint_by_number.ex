@@ -27,6 +27,13 @@ defmodule PaintByNumber do
   end
 
   def get_first_pixel(picture, color_count) do
+    case picture do
+      <<>> -> nil
+      _ ->
+        bits = palette_bit_size(color_count)
+        <<first::size(bits), _rest::bitstring>> = picture
+        first
+    end
     # Please implement the get_first_pixel/2 function
   end
 
