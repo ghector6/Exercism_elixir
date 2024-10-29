@@ -22,6 +22,7 @@ defmodule PaintByNumber do
   end
 
   def prepend_pixel(picture, color_count, pixel_color_index) do
+    <<pixel_color_index::size(palette_bit_size(color_count)), picture::bitstring>>
     # Please implement the prepend_pixel/3 function
   end
 
