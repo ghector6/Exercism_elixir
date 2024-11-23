@@ -19,7 +19,11 @@ defmodule DNA do
     do_encode(t, <<acc::bitstring, encode_nucleotide(h)::size(4)>>)
   end
 
-  def decode(dna) do
-    # Please implement the decode/1 function
+  def decode(dna), do: do_decode(dna, [])
+
+  defp do_decode(<<>>, acc), do: acc
+  defp do_decode(<<h::4, rest::bitstring>>, acc) do
+   do_decode(rest, acc ++ [decode_nucleotide(h)])
   end
+
 end
