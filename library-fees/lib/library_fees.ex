@@ -22,7 +22,7 @@ defmodule LibraryFees do
   end
 
   def monday?(datetime) do
-    # Please implement the monday?/1 function
+    if Date.day_of_week(datetime) == 1, do: true, else: false
   end
 
   def calculate_late_fee(checkout, return, rate) do
