@@ -18,7 +18,8 @@ defmodule LibraryFees do
 
 
   def days_late(planned_return_date, actual_return_datetime) do
-    Date.diff(actual_return_datetime, planned_return_date)
+    diff = Date.diff(actual_return_datetime, planned_return_date)
+    max(diff,0)
   end
 
   def monday?(datetime) do
@@ -26,6 +27,19 @@ defmodule LibraryFees do
   end
 
   def calculate_late_fee(checkout, return, rate) do
-    # Please implement the calculate_late_fee/3 function
+    diff =
+      checkout
+      |> datetime_from_string()
+      |> return_date()
+      |> days_late(datetime_from_string(return))
+    cond do
+      diff <= 0 ->
+        0
+      monday?(datetime_from_string(return)) ->
+        trunc(rate * diff / 2)
+      true  ->
+        trunc(rate * diff)
+    end
   end
 end
+
