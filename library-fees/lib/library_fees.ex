@@ -7,11 +7,18 @@ defmodule LibraryFees do
   def before_noon?(datetime), do: if datetime.hour < 12, do: true, else: false
 
   def return_date(checkout_datetime) do
-    # Please implement the return_date/1 function
+    day_range = before_noon?(checkout_datetime)
+    case day_range do
+      true ->
+        Date.add(checkout_datetime, 28)
+      false ->
+        Date.add(checkout_datetime, 29)
+    end
   end
 
+
   def days_late(planned_return_date, actual_return_datetime) do
-    # Please implement the days_late/2 function
+    Date.diff(actual_return_datetime, planned_return_date)
   end
 
   def monday?(datetime) do
