@@ -4,7 +4,7 @@ defmodule LibraryFees do
     n_dtime
   end
 
-  def before_noon?(datetime), do: if datetime.hour < 12, do: true, else: false
+  def before_noon?(datetime), do: if(datetime.hour < 12, do: true, else: false)
 
   def return_date(checkout_datetime) do
     day_range = before_noon?(checkout_datetime)
@@ -23,7 +23,7 @@ defmodule LibraryFees do
   end
 
   def monday?(datetime) do
-    if Date.day_of_week(datetime) == 1, do: true, else: false
+    if(Date.day_of_week(datetime) == 1, do: true, else: false)
   end
 
   def calculate_late_fee(checkout, return, rate) do
